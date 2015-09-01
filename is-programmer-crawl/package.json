@@ -1,0 +1,8 @@
+{
+  "name": "is-programmer-crawl",
+  "version": "0.0.1",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "moment": "^2.10.6"
+  }
+}
