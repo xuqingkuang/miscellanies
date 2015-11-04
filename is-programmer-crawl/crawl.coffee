@@ -32,7 +32,7 @@ content = fs.readFile source, (err, data) ->
       content: content
       createdAt: createdAt
       category: $el.find('.readmore').text()
-      tags: $el.find('.post_tags').map((index, el) -> $(el).text()).get().join(',')
+      tags: $el.find('.post_tags').map((index, el) -> $(el).text()).get()
     }
   ).get()
 
