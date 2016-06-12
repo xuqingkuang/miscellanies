@@ -18,7 +18,11 @@ content = fs.readFile source, (err, data) ->
     $content = $el.find('.content > .post_brief > .cnt')
     $content = $el.find('.content > .post_brief') unless $content.length
     # 转译一下内容，因为 cheerio 的 html() 把 unicode 编码了。
-    content = unescape($content.html().replace(/&#x/g,'%u').replace(/;/g,''))
+    content = unescape($content.html()
+      .replace(/&#x/g,'%u')
+      .replace(/;/g,'')
+      .replace(/%uA0/g,' ')
+    )
     # CreatedAt
     try
       createdAt = moment($el.find('abbr.published').text()).toJSON()
